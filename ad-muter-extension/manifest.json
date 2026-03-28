@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Ad Muter — Live Match",
+  "version": "2.0.0",
+  "description": "Automatically mutes the tab when an ad plays during a live match and unmutes when the match resumes.",
+  "permissions": ["tabs", "storage", "activeTab", "webRequest"],
+  "host_permissions": [
+    "*://*.hotstar.com/*",
+    "*://*.jiohotstar.com/*",
+    "*://*.jiocinema.com/*",
+    "*://*.youtube.com/*",
+    "*://*.sonyliv.com/*",
+    "*://*.willow.tv/*",
+    "*://*.espn.com/*",
+    "*://*.espncricinfo.com/*",
+    "*://*.fancode.com/*",
+    "*://bifrost-api.hotstar.com/*",
+    "*://bifrost-api.jiohotstar.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.hotstar.com/*",
+        "*://*.jiohotstar.com/*",
+        "*://*.jiocinema.com/*",
+        "*://*.youtube.com/*",
+        "*://*.sonyliv.com/*",
+        "*://*.willow.tv/*",
+        "*://*.espn.com/*",
+        "*://*.espncricinfo.com/*",
+        "*://*.fancode.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
