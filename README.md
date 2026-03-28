@@ -1,3 +1,4 @@
+Note : This has been only tested on jiohotstar with the idea of testing on other platforms if you do test it let me know if find any bugs.
 # Ad Muter — Live Match
 
 A Chrome extension that automatically mutes your browser tab when ads play during live sports streams, and unmutes when the action resumes.
